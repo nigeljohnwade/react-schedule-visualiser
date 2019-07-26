@@ -29,8 +29,8 @@ const ScheduleVisualiser = ({
                                 key={index}
                                 levelOfDetail={levelOfDetail}
                                 now={now}
-                                name={`Berth-${index}`}
-                                state="normal"
+                                name={index === 0 ? 'Markers' : `Berth-${index}`}
+                                state={index === 0 ? 'markers' : 'normal'}
                             />
                         })
                     }

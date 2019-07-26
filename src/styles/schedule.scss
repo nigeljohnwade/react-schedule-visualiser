@@ -13,6 +13,10 @@
     left: 0;
     top:0;
   }
+  &--markers{
+    height: calc(var(--schedule-track-height) / 2);
+    background-color: var(--schedule-track-marker-background);
+  }
 }
 
 .schedule__track + .schedule__track{
@@ -25,4 +29,15 @@
   overflow: hidden;
   background-color: var(--schedule-item-background);
   color: var(--schedule-item-color);
+  &--day{
+    background-color: var(--schedule-item-marker-background);
+    border-right: 1px solid black;
+  }
+  &--day:last-child{
+    border-left: 1px solid black;
+  }
+  &-title{
+    padding-top: $base-padding;
+    padding-left: $base-padding
+  }
 }

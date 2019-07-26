@@ -25,7 +25,7 @@ const ScheduleItem = ({
             style={{ width: width, right: right }}
             title={`${title}`}
         >
-            <div>{title}</div>
+            <div className={'schedule__item-title'}>{title}</div>
         </div>
     )
 }
