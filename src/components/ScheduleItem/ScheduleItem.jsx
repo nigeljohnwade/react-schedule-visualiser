@@ -4,15 +4,14 @@ import React, {
 
 const ScheduleItem = ({
     detail,
-    title,
-    levelOfDetail,
-    startTime,
     endTime,
+    levelOfDetail,
+    now,
+    startTime,
     state,
+    title,
     ...rest,
 }) => {
-
-    const now = new Date().getTime();
     const duration = (endTime - startTime) / levelOfDetail;
     const width = `${Math.max(duration, 20)}px`;
     const right = `${-((startTime - now) / levelOfDetail)}px`;

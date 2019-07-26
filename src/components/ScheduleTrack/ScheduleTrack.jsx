@@ -9,10 +9,10 @@ const ScheduleTrack = ({
     items,
     levelOfDetail,
     name,
+    now,
     state,
     ...rest,
 }) => {
-
 
     return (
         <div
@@ -25,6 +25,7 @@ const ScheduleTrack = ({
                     return (<ScheduleItem
                         key={item.id}
                         levelOfDetail={levelOfDetail}
+                        now={now}
                         {...item}
                     />)
                 })

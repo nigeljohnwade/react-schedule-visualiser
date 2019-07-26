@@ -9,6 +9,7 @@ const ScheduleTrack = lazy(() => import('components/ScheduleTrack'));
 const ScheduleVisualiser = ({
     caption,
     levelOfDetail,
+    now,
     title,
     trackData,
     ...rest,
@@ -27,6 +28,7 @@ const ScheduleVisualiser = ({
                                 items={track}
                                 key={index}
                                 levelOfDetail={levelOfDetail}
+                                now={now}
                                 name={`Berth-${index}`}
                                 state="normal"
                             />

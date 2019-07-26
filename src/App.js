@@ -38,6 +38,7 @@ const trackData = [
 
 function App() {
     const [levelOfDetail, setLevelOfDetail] = useState(10000 * 60);
+    const [now, setNow] = useState(new Date().getTime());
 
     return (
         <div className="app">
@@ -49,11 +50,19 @@ function App() {
                     onChange={(e) => { setLevelOfDetail(e.target.value) }}
                     step="1000"
                 />
+                <input
+                    type="number"
+                    name="now"
+                    value={now}
+                    onChange={(e) => { setNow(e.target.value) }}
+                    step="1000000"
+                />
             </div>
             <Suspense fallback={<p>Loading</p>}>
                 <ScheduleVisualiser
                     caption="Schedule caption goes here"
                     levelOfDetail={levelOfDetail}
+                    now={now}
                     title="Schedule visualisation"
                     trackData={trackData}
                 />
