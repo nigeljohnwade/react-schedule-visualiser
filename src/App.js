@@ -12,6 +12,7 @@ const ScheduleVisualiser = lazy(() => import('components/ScheduleVisualiser'));
 const trackData = [
     items1.map(item => {
         return {
+            id: item.id,
             startTime: new Date(item.pta).getTime(),
             endTime: new Date(item.ptd).getTime(),
             title: item.vessel.name,
@@ -20,6 +21,7 @@ const trackData = [
     }),
     items2.map(item => {
         return {
+            id: item.id,
             startTime: new Date(item.pta).getTime(),
             endTime: new Date(item.ptd).getTime(),
             title: item.vessel.name,
@@ -28,6 +30,7 @@ const trackData = [
     }),
     items3.map(item => {
         return {
+            id: item.id,
             startTime: new Date(item.pta).getTime(),
             endTime: new Date(item.ptd).getTime(),
             title: item.vessel.name,
