@@ -9,7 +9,38 @@ import { items1, items2, items3 } from 'data/listPortCalls';
 import 'styles/global.scss';
 
 const ScheduleVisualiser = lazy(() => import('components/ScheduleVisualiser'));
+const timeDisplayTrack = [
+    {
+        id: new Date().getTime() - (1000 * 60 * 60 * 24),
+        startTime: new Date().getTime() - (1000 * 60 * 60 * 24),
+        endTime: new Date().getTime(),
+        title: 'Day',
+        state: 'day',
+    },
+    {
+        id: new Date().getTime() - (1000 * 60 * 60 * 24 * 2),
+        startTime: new Date().getTime() - (1000 * 60 * 60 * 24 * 2),
+        endTime: new Date().getTime() - (1000 * 60 * 60 * 24),
+        title: 'Day',
+        state: 'day',
+    },
+    {
+        id: new Date().getTime() - (1000 * 60 * 60 * 24 * 3),
+        startTime: new Date().getTime() - (1000 * 60 * 60 * 24 * 3),
+        endTime: new Date().getTime() - (1000 * 60 * 60 * 24 * 2),
+        title: 'Day',
+        state: 'day',
+    },
+    {
+        id: new Date().getTime() - (1000 * 60 * 60 * 24 * 4),
+        startTime: new Date().getTime() - (1000 * 60 * 60 * 24 * 4),
+        endTime: new Date().getTime() - (1000 * 60 * 60 * 24 * 3),
+        title: 'Day',
+        state: 'day',
+    }
+];
 const trackData = [
+    timeDisplayTrack,
     items1.map(item => {
         return {
             id: item.id,
