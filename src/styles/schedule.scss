@@ -11,16 +11,16 @@
       top: 0px;
     }
     &04 {
-      top: 120px;
+      top: var(--schedule-track-height);
     }
     &05 {
-      top: 240px;
+      top: calc(2 * var(--schedule-track-height));
     }
     &06 {
-      top: 360px;
+      top: calc(3 * var(--schedule-track-height));
     }
     &09 {
-      top: 480px;
+      top: calc(4 * var(--schedule-track-height));
     }
   }
 }
