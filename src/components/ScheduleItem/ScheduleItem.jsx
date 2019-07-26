@@ -1,9 +1,5 @@
 import React, {
     memo,
-    lazy,
-    Suspense,
-    useState,
-    useEffect,
 } from 'react';
 
 const ScheduleItem = ({

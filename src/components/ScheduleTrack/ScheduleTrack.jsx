@@ -1,9 +1,6 @@
 import React, {
     memo,
     lazy,
-    Suspense,
-    useState,
-    useEffect,
 } from 'react';
 
 const ScheduleItem = lazy(() => import('components/ScheduleItem'));
@@ -22,7 +19,7 @@ const ScheduleTrack = ({
             className={`schedule__track schedule__track--${state.toLowerCase()}`}
             title={`${name}`}
         >
-            <div>{name}</div>
+            <div className="schedule__track-label">{name}</div>
             {
                 items.map(item => {
                     return (<ScheduleItem

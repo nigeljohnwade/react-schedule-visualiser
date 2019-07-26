@@ -10,7 +10,7 @@ const ScheduleVisualiser = lazy(() => import('components/ScheduleVisualiser'));
 
 function App() {
     const [levelOfDetail, setLevelofDetail] = useState(10000 * 60);
-    console.log(levelOfDetail);
+
     return (
         <div className="app">
             <input

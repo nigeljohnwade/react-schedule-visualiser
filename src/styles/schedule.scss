@@ -8,6 +8,11 @@
   height: var(--schedule-track-height);
   position: relative;
   background-color: var(--schedule-track-background);
+  &-label{
+    position: absolute;
+    left: 0;
+    top:0;
+  }
 }
 
 .schedule__track + .schedule__track{

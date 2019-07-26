@@ -2,8 +2,6 @@ import React, {
     memo,
     lazy,
     Suspense,
-    useState,
-    useEffect,
 } from 'react';
 
 import { items1, items2, items3 } from 'data/listPortCalls';
@@ -25,10 +23,12 @@ const ScheduleVisualiser = ({
             <div className="schedule__body">
                 <Suspense fallback={<p>Loading</p>}>
                     {
-                        trackData.map(track => {
+                        trackData.map((track, index) => {
                             return <ScheduleTrack
                                 items={track}
+                                key={index}
                                 levelOfDetail={levelOfDetail}
+                                name={`Berth-${index}`}
                                 state="normal"
                             />
                         })
