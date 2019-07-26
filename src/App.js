@@ -9,7 +9,32 @@ import { items1, items2, items3 } from 'data/listPortCalls';
 import 'styles/global.scss';
 
 const ScheduleVisualiser = lazy(() => import('components/ScheduleVisualiser'));
-const trackData = [items1, items2, items3];
+const trackData = [
+    items1.map(item => {
+        return {
+            startTime: new Date(item.pta).getTime(),
+            endTime: new Date(item.ptd).getTime(),
+            title: item.vessel.name,
+            state: item.state,
+        }
+    }),
+    items2.map(item => {
+        return {
+            startTime: new Date(item.pta).getTime(),
+            endTime: new Date(item.ptd).getTime(),
+            title: item.vessel.name,
+            state: item.state,
+        }
+    }),
+    items3.map(item => {
+        return {
+            startTime: new Date(item.pta).getTime(),
+            endTime: new Date(item.ptd).getTime(),
+            title: item.vessel.name,
+            state: item.state,
+        }
+    }),
+];
 
 function App() {
     const [levelOfDetail, setLevelOfDetail] = useState(10000 * 60);

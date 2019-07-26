@@ -23,7 +23,6 @@ const ScheduleTrack = ({
             {
                 items.map(item => {
                     return (<ScheduleItem
-                        detail={{ vessel: item.vessel, berth: item.berth, agent: item.agent }}
                         key={item.id}
                         levelOfDetail={levelOfDetail}
                         {...item}

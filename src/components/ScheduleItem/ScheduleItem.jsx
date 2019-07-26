@@ -4,35 +4,29 @@ import React, {
 
 const ScheduleItem = ({
     detail,
-    detail: {
-        vessel: {
-            name
-        }
-    },
+    title,
     levelOfDetail,
-    pta,
-    ptd,
+    startTime,
+    endTime,
     state,
     ...rest,
 }) => {
 
     const now = new Date().getTime();
-    const startTime = new Date(pta).getTime() - now;
-    const endTime = new Date(ptd).getTime() - now;
     const duration = (endTime - startTime) / levelOfDetail;
     const width = `${Math.max(duration, 20)}px`;
-    const right = `${-(startTime / levelOfDetail)}px`;
+    const right = `${-((startTime - now) / levelOfDetail)}px`;
 
     return (
         <div
-            className={`schedule__item schedule__item--${state.toLowerCase()} schedule__item--${detail.berth.name.replace(/\s/, '-')}`}
+            className={`schedule__item schedule__item--${state.toLowerCase()}`}
             data-duration={duration}
             data-endtime={endTime}
             data-starttime={startTime}
             style={{ width: width, right: right }}
-            title={`${name}`}
+            title={`${title}`}
         >
-            <div>{name}</div>
+            <div>{title}</div>
         </div>
     )
 }
