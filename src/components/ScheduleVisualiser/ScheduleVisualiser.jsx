@@ -4,17 +4,16 @@ import React, {
     Suspense,
 } from 'react';
 
-import { items1, items2, items3 } from 'data/listPortCalls';
-
 const ScheduleTrack = lazy(() => import('components/ScheduleTrack'));
 
 const ScheduleVisualiser = ({
     caption,
     levelOfDetail,
     title,
+    trackData,
     ...rest,
 }) => {
-    const trackData = [items1, items2, items3];
+
     return (
         <figure>
             <header>
