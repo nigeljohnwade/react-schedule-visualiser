@@ -1,0 +1,26 @@
+.schedule__body {
+  position: relative;
+}
+.schedule__item {
+  position: absolute;
+  overflow: hidden;
+  background-color: var(--schedule-item-background);
+  color: var(--schedule-item-color);
+  &--Berth- {
+    &01 {
+      top: 0px;
+    }
+    &04 {
+      top: 120px;
+    }
+    &05 {
+      top: 240px;
+    }
+    &06 {
+      top: 360px;
+    }
+    &09 {
+      top: 480px;
+    }
+  }
+}
