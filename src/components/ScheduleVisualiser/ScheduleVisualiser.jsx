@@ -5,9 +5,10 @@ import React, {
     useState,
     useEffect,
 } from 'react';
-import { items } from 'data/listPortCalls';
 
-const ScheduleItem = lazy(() => import('components/ScheduleItem'));
+import { items1, items2, items3 } from 'data/listPortCalls';
+
+const ScheduleTrack = lazy(() => import('components/ScheduleTrack'));
 
 const ScheduleVisualiser = ({
     caption,
@@ -15,6 +16,7 @@ const ScheduleVisualiser = ({
     title,
     ...rest,
 }) => {
+    const trackData = [items1, items2, items3];
     return (
         <figure>
             <header>
@@ -23,14 +25,12 @@ const ScheduleVisualiser = ({
             <div className="schedule__body">
                 <Suspense fallback={<p>Loading</p>}>
                     {
-                        items.map(item => {
-                            console.log(item.berth.name);
-                            return (<ScheduleItem
-                                detail={{ vessel: item.vessel, berth: item.berth, agent: item.agent }}
-                                key={item.id}
+                        trackData.map(track => {
+                            return <ScheduleTrack
+                                items={track}
                                 levelOfDetail={levelOfDetail}
-                                {...item}
-                            />)
+                                state="normal"
+                            />
                         })
                     }
                 </Suspense>

@@ -1,26 +1,23 @@
+@import './variables';
+
 .schedule__body {
-  position: relative;
+  border: 1px solid black;
+  padding: $base-padding;
 }
+.schedule__track{
+  height: var(--schedule-track-height);
+  position: relative;
+  background-color: var(--schedule-track-background);
+}
+
+.schedule__track + .schedule__track{
+  margin-top: $base-padding;
+}
+
 .schedule__item {
+  height: inherit;
   position: absolute;
   overflow: hidden;
   background-color: var(--schedule-item-background);
   color: var(--schedule-item-color);
-  &--Berth- {
-    &01 {
-      top: 0px;
-    }
-    &04 {
-      top: var(--schedule-track-height);
-    }
-    &05 {
-      top: calc(2 * var(--schedule-track-height));
-    }
-    &06 {
-      top: calc(3 * var(--schedule-track-height));
-    }
-    &09 {
-      top: calc(4 * var(--schedule-track-height));
-    }
-  }
 }
