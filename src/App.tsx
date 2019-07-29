@@ -81,14 +81,14 @@ function App() {
                     type="number"
                     name="levelOfDetail"
                     value={levelOfDetail}
-                    onChange={(e) => { setLevelOfDetail(e.target.value) }}
+                    onChange={(e) => { setLevelOfDetail(Number(e.target.value)) }}
                     step="1000"
                 />
                 <input
                     type="number"
                     name="now"
                     value={now}
-                    onChange={(e) => { setNow(e.target.value) }}
+                    onChange={(e) => { setNow(Number(e.target.value)) }}
                     step="1000000"
                 />
             </div>
